@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    <!--background-image: url("pink-flower.jpg");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position:center center; i dont need this -->
+	-webkit-text-size-adjust:100%; <!--It's also worth adding this to your style sheet to avoid auto resizing of text on some devices-->
+}
+
+p {
+	font-style: italic;
+	color: #ff33cc;
+	font-size:110%;
+	margin: 0; <!--no space between headers or paragraph-->
+	padding: 0; <!--no space between headers or paragraph-->
+}
+
+@media screen and (min-width: 600px) {
+   p {font-size: 30px !important;}
+}
+
+.container {
+    position: relative;
+}
+
+.image1, .image2 {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: 1s ease;
+}
+
+.access {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  -ms-transform: translate(-50%, -120%);
+  text-align: left;
+  width: 80%;
+}
+
+#wrongpw {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, 100%);
+  -ms-transform: translate(-60%, -100%);
+  text-align: left;
+  width: 80%;
+  color: #ff1a1a;
+  font-size:100%;
+}
+
+.container:hover .image1 {
+  opacity: 0.1;
+}
+
+.container:hover .access {
+  opacity: 1;
+}
+
+.dot-container {
+    margin-top: 50px;
+	display: None;
+    text-align: center;
+    padding: 13px;
+    background: #ddd;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.subcontainer, .ssubcontainer{
+  display: None;
+  cursor: pointer;
+}
+
+form{
+ display: None;
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 80%;
+  font-weight: 530;
+}
+
+.scontent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  width: 80%;
+  font-weight: 530;
+}
+
+.ssubcontainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 18%);
+  -ms-transform: translate(-50%, 18%);
+  width: 80%;
+  font-weight: 530;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 80%;
+  font-weight: 530;
+}
+
+img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none;} <!--remove 000webhost branding-->
+
+</style>
+</head>
+<body>
+<div class="heading">
+<p style="font-size:130%;"><b>Hi there, </b></p>  
+</br>
+<p style="text-align:center; margin-left: 10%; margin-right: 10%; display: inline-block; text-align: left;"> <!--center left text-->
+This is my first web application. It functions as an invitation letter. Key in password below and check out the content!
+</p>
+<p style="font-size:130%; text-align:right;"><b>Ee Chee</b></p>
+</br>
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<div class="container">
+  <img src="Glittering tree.jpg" alt="bluedream" class="image1">
+  <div class="access">
+    <p><b>" </b>Dear Visitors, this web letter was written exclusively for someone.</p><p>Please insert a valid password below.</p><p>Good luck with your first attempt! Evil Smile }:-> <b> "</b></p>
+	</br>
+	<input type="password" id="OnlyShe" value="">
+	<button onclick="Getmein()">Open Sesame</button>
+	<p id="wrongpw"></p>
+  </div>
+  
+  <div class="subcontainer" onclick="Next(1)">
+  <img src="Glittering tree.jpg" alt="bluedream" class="image1">
+  <div class="content" >
+	<p style="color:#ffff00;"><span style="font-size:40px;">Welcome</span> once again to my first web application! It is not perfect, I know, however it was developed absolutely with coding. No framework, libraries, drag & drop nor others involved, just purely codes. Felt super satisfied with this project. </p> <!--.p color overwritten .content color. Add color in p tag here-->
+  </div>
+  </div>
+  
+  <div class="subcontainer" onclick="Next(1)">
+  <img src="Glittering tree.jpg" alt="bluedream" class="image1">
+  <div class="content" >
+	<p style="color:#ffff00;">There are few more things to improve in this project. It is not perfectly responsive, i.e. it has the best view on smart phone but probably not on tablet or laptop. It is simply because I have not mastered the skills at that point. Lack of knowledge of Javascript too.</p> <!--.p color overwritten .content color. Add color in p tag here-->
+  </div>
+  </div>
+  
+  <div class="subcontainer" onclick="Next(1)">
+  <img src="Gold sparkling.jpg" alt="shimmering" class="image2">
+  <div class="scontent" >
+	<p style="color:#ac00e6; text-align:center; font-size:60px;">Invitation</p></br>
+	<p style="color:#ac00e6; text-align:center; font-size:25px;"><strong>Date: 28th July 2018</strong></p></br>
+	<P style="color:#ac00e6;">Certainly, if you couldn't make it on that day, you can always change the date. Write me back. I would get back to you as soon as possible. </p>
+	</br>
+</div>
+</div>
+	<form class="form" action="mailto:eechee.leng@gmail.com" method="post" enctype="text/plain">
+	</br>
+	<input type="text" name="Inbox me your desired date">
+	<input type="submit" value="Send">
+	</br>
+	</form>
+	
+	<div class="ssubcontainer" onclick="Next(1)">
+	<P style="color:#ac00e6; font-size:16px;">I guess I need to improve my back-end web programming skills as well.</p>
+</br>
+	<p style="color:#ac00e6; text-align:center; font-size:30px;"><strong>Thank you</strong></p>
+		
+  </div>
+  
+</div>
+
+<script>
+var fail1st = 1;
+var index = 1;
+var c = document.getElementsByClassName("subcontainer");
+var fo = document.getElementsByClassName("form");
+var sub = document.getElementsByClassName("ssubcontainer");
+		
+function Getmein() 
+{
+    var x = document.getElementById("OnlyShe").value;
+	
+	if (fail1st == 1)
+	{ 
+		document.getElementById("wrongpw").innerHTML ="* Wrong password! Ha, there is no correct password for the first attempt. Please insert again, you shall get it right this time.";	
+	}	
+	else if (x == "GHmgH" && fail1st >1) 
+	{   
+	    /*window.open('protectpage.html');*/
+		var y = document.getElementsByClassName("access");
+		y[0].style.display = "none"; /*important!Treat it as array when applying style, wondering*/
+		<!--var att = document.createAttribute("onclick"); /*add an attribute, for this case 'onclick', to a class*/-->
+		<!--att.value = "Next(1)";-->
+		<!--z[0].setAttributeNode(att);-->
+		
+		var a = document.getElementsByClassName("heading");
+		a[0].style.display = "none";
+		var b = document.getElementsByClassName("dot-container");
+		b[0].style.display = "block";
+		
+		var z = document.getElementsByClassName("image1");
+		z[0].style.display = "none";
+		z[1].style.opacity = "0.7";
+		z[2].style.opacity = "0.7";
+		c[0].style.display = "block";
+	}
+	else
+	{
+		document.getElementById("wrongpw").innerHTML ="* Well, you have probably made a typo in the password. Please try again! Be noted that it is case sensitive.";
+	}
+	fail1st+=1;
+}
+
+function Next(n)
+{
+	Present(index += n);
+}
+
+function currentSlide(n) {
+  Present(index = n);
+}
+
+function Present(n)
+{
+	var i;
+	var dots = document.getElementsByClassName("dot");
+	for (i=0; i<c.length; i++)
+	{
+		c[i].style.display = "none";
+	}
+	if (n > c.length) {index = 1;} 
+
+	<!--z[0].style.display = "none"; /*opacity=0 doesnt work here, image1 isnt removed, stacked with image2*/-->
+	if (n==c.length)
+	{	
+		c[index-1].style.display = "block";	
+		sub[0].style.display = "block";
+		fo[0].style.display = "block";
+	}
+	else
+	{
+		c[index-1].style.display = "block";
+		sub[0].style.display = "none";
+		fo[0].style.display = "none";
+	}
+		
+	for (i = 0; i < dots.length; i++) 
+	{
+      dots[i].className = dots[i].className.replace(" active", ""); /*space before active, otherwise it fails, wondering*/
+	}
+	dots[index-1].className += " active";
+}
+
+</script>  
+</body>
+</html>

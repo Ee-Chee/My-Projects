@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+
+            body {
+            	-webkit-text-size-adjust:100%;
+            	background-color: #9494b8;
+            	<!--21.10.2018 could be bug of Notepad++. Comments are only allowed at the end of the lines. Otherwise those tags are not functioning-->
+            }
+
+            .center1 {
+            	text-align: center;
+            	font-weight: bold;
+                font-size: 40px;
+            	color: #28004d;
+            	<!-- border: 1px solid #ccc; -->
+            }
+
+            #p1 {
+            	margin-top: 5px;
+            	margin-bottom: 10px;
+            	line-height: 1.5;
+
+            	<!-- p{border: 1px solid #ccc;} To check the 'Image aligned center and text right' problem -->
+            }
+
+            #logo {
+            	width: 30%;
+            }
+
+            #center2 {
+            	display: block;
+            	margin-left: auto;
+            	margin-right: auto;
+            	width:	700px;
+            	height: 350px;
+
+            }
+
+            .center3 {
+            background-color: #f1f1f1;
+            	text-align: center;
+            	font-weight: bold;
+                font-size: 60px;
+            	color: #ff0066;
+            	margin-top: 20px;
+            	margin-bottom: 20px;
+            }
+
+            .center4 {
+            	padding: 5px;
+            	text-align: center;
+                font-size: 20px;
+            }
+
+
+            #link {
+            	cursor: pointer;
+            	font-weight: bold;
+            	color: #0000ff;
+            }
+
+            .contact {
+              display: none;
+            }
+
+            #contactperson {
+            	display: block;
+            	margin-left: auto;
+            	margin-right: auto;
+            	width:	800px;
+            	height:	450px;
+            	margin-top: 80px;
+            	margin-bottom: 40px;
+            }
+
+            .button {
+            	display: block;
+            	margin-left: auto;
+            	margin-right: auto;
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+            	font-weight: bold;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            #myInput {
+            	opacity: 0; <!--display: none cant apply here as email cant be copied without a value. Make it transparent!-->
+            }
+
+            @media only screen and (max-width:800px) {
+              /* For tablets: */
+            	.center1{
+                font-size: 45px;
+            	}
+
+            	#logo{
+            	width: 30%;
+            	}
+
+            	#center2 {
+            	width:	80%;
+            	}
+
+            	.center3 {
+                font-size: 55px;
+            	margin-top: 30px;
+            	margin-bottom: 30px;
+            	}
+
+            	.center4 {
+                font-size: 22px;
+            	}
+
+            	#contactperson {
+            	width:	100%;
+            	margin-top: 60px;
+            	margin-bottom: 30px;
+                }
+
+            	.button {
+                font-size: 20px;
+            	}
+            }
+
+            @media only screen and (max-width:500px) {
+              /* For mobile phones: */
+            	.center1{
+                font-size: 25px;
+            	}
+
+            	#logo{
+            	width: 80px;
+            	}
+
+            	#center2 {
+            	width:	100%;
+            	height: 50%;
+            	}
+
+            	.center3 {
+                font-size: 22px;
+            	margin-top: 20px;
+            	margin-bottom: 20px;
+            	}
+
+            	.center4 {
+                font-size: 15px;
+            	text-align: left;
+            	}
+
+            	#contactperson {
+            	width:	100%;
+            	height: 80%;
+            	margin-top: 40px;
+            	margin-bottom: 20px;
+                }
+
+            	.button {
+                font-size: 13px;
+            	}
+            }
+
+
+            img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none;} <!--use developertool to check src and remove 000webhost branding-->
+        </style>
+    </head>
+
+    <body>
+        <div class="center1">
+            <!--
+                div center 1: text align center, it makes the element starts in the middle. p display inline-block, it makes a block along a line, so that, text can be aligned left in the middle
+            -->
+            <!--
+                image floated left and set an invisible span element at the end of 'Armstrong' to ensure the string length on first fine is >= second line; otherwise, second line is squeezed out from the frame.
+            -->
+            <!--
+                set the width of p to 23% might solve the problem but it is not ideal and responsive to other devices.
+            -->
+            <p id="p1" style="display: inline-block; text-align:left;">
+                <img
+                    id="logo"
+                    src="AR Logo.png"
+                    alt="Armstrong Resources.my"
+                    style="float:left;"
+                />Armstrong<span style="opacity:0" ;>aaa</span
+                ><br />Resources.my
+            </p>
+        </div>
+
+        <img id="center2" src="general.jpg" alt="Products" />
+
+        <div class="center3">Site construction in progress.</div>
+
+        <div class="center4">
+            We are currently constructing our website. We apologize that it is
+            taking longer than expected. If you have any inquiries, please feel
+            free to contact<span id="link" onclick="link()"> Mr Leng </span
+            >here.
+        </div>
+
+        <div class="contact">
+            <img id="contactperson" src="Contact Person.jpg" alt="Mr Leng" />
+            <button class="button" onclick="myFunction()">
+                Copy Email Address
+            </button>
+            <input
+                type="text"
+                value="lengkoonmeng@armtrongjb.com.my"
+                id="myInput"
+            />
+        </div>
+
+        <script>
+            function link() {
+                var X = document.getElementsByClassName("contact");
+                var x = document.getElementsByClassName("center1");
+                /*var special = document.getElementById("center2"); not necessary*/
+                var y = document.getElementsByClassName("center3");
+                var z = document.getElementsByClassName("center4");
+                X[0].style.display = "block";
+                x[0].style.display = "none";
+                document.getElementById("center2").style.display = "none";
+                y[0].style.display = "none";
+                z[0].style.display = "none";
+            }
+
+            function myFunction() {
+                var copyText = document.getElementById("myInput");
+                copyText.select();
+                document.execCommand("copy");
+                alert("Copied email address: " + copyText.value);
+            }
+        </script>
+    </body>
+</html>
